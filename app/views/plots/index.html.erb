@@ -1,9 +1,9 @@
 <% @plots.each do |plot| %>
 <section id="plot-<%= plot.id %>">
-  <%= plot.number %>
+  <p>PLot Number :<%= plot.number %></p>
 </section>
   <% plot.plants.each do |plant| %>
-    <li><%= plant.name %></li><br/>
+    <li><%= plant.name %>   <%= link_to 'Delete', "/plots/#{plot.id}/plants/#{plant.id}", method: :delete %></li><br/>
   <% end %><br/>
 <% end %>
 
