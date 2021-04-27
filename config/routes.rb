@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :gardens do
-    resources :plots
+  resources :plots, only: [:index] do
+    resources :plants, only: [:destroy]
   end
 
-  resources :plants
+  resources :gardens, only: [:show]
 end
