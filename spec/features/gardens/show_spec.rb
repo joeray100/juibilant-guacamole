@@ -25,9 +25,13 @@ RSpec.describe 'Gardens Show Page' do
     expect(page).to have_content(@garden_1.organic)
   end
 
+  it "I see a list of plants that do not take longer than 100 days to harvest" do
+    expect(page).to_not  have_content(@plant_2.name)
+  end
+
   it "I see a list of unique plants that are included in that garden's plots" do
     expect(page).to have_content(@plant_1.name, count: 1)
-    expect(page).to have_content(@plant_2.name, count: 1)
     expect(page).to have_content(@plant_3.name, count: 1)
   end
+
 end
