@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :gardens do
-    resources :plots
-  end
-
+  resources :gardens
+  resources :plots
+  resources :plot_plants
   resources :plants
 end
